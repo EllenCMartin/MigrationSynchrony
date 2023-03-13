@@ -11,19 +11,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
-
-## Set working directory:
 import os
-if os.environ['HOMEPATH'] == "\\Users\\ellencm":
-  os.chdir('//home.ansatt.ntnu.no/ellencm/Desktop/SIMOUTPUT_AUGUST/')
+
 ################################################################################################################################
 ## FIGURE 3 showing average spatial population synchrony on te breeding ground for nonmigrants vs migrants under 
 # different environmental autocorrelation simulations. 
 ################################################################################################################################
 
-# NO Mig Route: K
-abs_output_0 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0_Migroutes0_Nit500_Carryover0.csv', header = None)
+# NO Mig Route: 
+abs_output_0 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0_Migroutes0_Nit1000_Carryover0.csv', header = None)
 distances_1 = pd.read_csv('Midpoint_Distances_Gridsize150_Thin2.csv', header = None)
 abs_output_0 = abs_output_0.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 distances_1 = distances_1.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
@@ -41,7 +37,7 @@ average_corr_0k.drop(index=average_corr_0k.index[0], axis=0, inplace=True)
 
 
 # 1 Mig Route: K
-abs_output_1mig = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr1_Migroutes1_Nit500_Carryover1.csv', header = None)
+abs_output_1mig = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr1_Migroutes1_Nit1000_Carryover1.csv', header = None)
 abs_output_1mig = abs_output_1mig.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 correlations_1mig = {}
 columns_1mig = abs_output_1mig.columns.tolist()
@@ -57,7 +53,7 @@ average_corr_1migk.drop(index=average_corr_1migk.index[0], axis=0, inplace=True)
 
 ###### TWO MIGRATION ROUTES ################################################################################################
 # 2 Mig Route: 0 correlation, r
-#abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr0_Migroutes2_Nit500_Carryover1.csv', header = None)
+#abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr0_Migroutes2_Nit1000_Carryover1.csv', header = None)
 #abs_output_3 = abs_output_3.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 #correlations_3 = {}
 #columns_3 = abs_output_3.columns.tolist()
@@ -72,7 +68,7 @@ average_corr_1migk.drop(index=average_corr_1migk.index[0], axis=0, inplace=True)
 
 
 # 2 Mig Route: 0 correlation, K
-#abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0_Migroutes2_Nit500_Carryover1.csv', header = None)
+#abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0_Migroutes2_Nit1000_Carryover1.csv', header = None)
 #abs_output_3 = abs_output_3.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 #correlations_3 = {}
 #columns_3 = abs_output_3.columns.tolist()
@@ -87,7 +83,7 @@ average_corr_1migk.drop(index=average_corr_1migk.index[0], axis=0, inplace=True)
 
 
 # 2 Mig Route: 0.25 correlation,  r
-#abs_output_4 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr0.25_Migroutes2_Nit500_Carryover1.csv', header = None)
+#abs_output_4 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr0.25_Migroutes2_Nit1000_Carryover1.csv', header = None)
 #abs_output_4 = abs_output_4.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 #correlations_4 = {}
 #columns_4 = abs_output_4.columns.tolist()
@@ -101,7 +97,7 @@ average_corr_1migk.drop(index=average_corr_1migk.index[0], axis=0, inplace=True)
 
 
 # 2 Mig Route: 0.25 correlation, K
-#abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0.25_Migroutes2_Nit500_Carryover1.csv', header = None)
+#abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0.25_Migroutes2_Nit1000_Carryover1.csv', header = None)
 #abs_output_3 = abs_output_3.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 #correlations_3 = {}
 #columns_3 = abs_output_3.columns.tolist()
@@ -116,7 +112,7 @@ average_corr_1migk.drop(index=average_corr_1migk.index[0], axis=0, inplace=True)
 
 
 # 2 Mig Route: 0.75 correlation, r 
-#abs_output_5 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr0.75_Migroutes2_Nit500_Carryover1.csv', header = None)
+#abs_output_5 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr0.75_Migroutes2_Nit1000_Carryover1.csv', header = None)
 #abs_output_5 = abs_output_5.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 #correlations_5 = {}
 #columns_5 = abs_output_5.columns.tolist()
@@ -130,7 +126,7 @@ average_corr_1migk.drop(index=average_corr_1migk.index[0], axis=0, inplace=True)
 
 
 # 2 Mig Route: 0.75 correlation, K
-#abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0.75_Migroutes2_Nit500_Carryover1.csv', header = None)
+#abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0.75_Migroutes2_Nit1000_Carryover1.csv', header = None)
 #abs_output_3 = abs_output_3.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 #correlations_3 = {}
 #columns_3 = abs_output_3.columns.tolist()
@@ -145,7 +141,7 @@ average_corr_1migk.drop(index=average_corr_1migk.index[0], axis=0, inplace=True)
 
 
 # 2 Mig Route: 1 correlation, r
-#abs_output_11 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr1_Migroutes2_Nit500_Carryover1.csv', header = None)
+#abs_output_11 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr1_Migroutes2_Nit1000_Carryover1.csv', header = None)
 #abs_output_11 = abs_output_11.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 #correlations_11 = {}
 #columns_11 = abs_output_11.columns.tolist()
@@ -159,7 +155,7 @@ average_corr_1migk.drop(index=average_corr_1migk.index[0], axis=0, inplace=True)
 
 
 # 2 Mig Route: 1 correlation, K
-#abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr1_Migroutes2_Nit500_Carryover1.csv', header = None)
+#abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr1_Migroutes2_Nit1000_Carryover1.csv', header = None)
 #abs_output_3 = abs_output_3.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 #correlations_3 = {}
 #columns_3 = abs_output_3.columns.tolist()
@@ -175,7 +171,7 @@ average_corr_1migk.drop(index=average_corr_1migk.index[0], axis=0, inplace=True)
 ########### 4 MIGRATION ROUTES ############################################################################################################
 
 # 4 Mig Route: 0 correlation, r
-abs_output_6 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr0_Migroutes4_Nit500_Carryover1.csv', header = None)
+abs_output_6 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr0_Migroutes4_Nit1000_Carryover1.csv', header = None)
 abs_output_6 = abs_output_6.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 correlations_6 = {}
 columns_6 = abs_output_6.columns.tolist()
@@ -189,7 +185,7 @@ average_corr_r40.drop(index=average_corr_r40.index[0], axis=0, inplace=True)
 
 
 # 4 Mig Route: 0 correlation, K
-abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0_Migroutes4_Nit500_Carryover1.csv', header = None)
+abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0_Migroutes4_Nit1000_Carryover1.csv', header = None)
 abs_output_3 = abs_output_3.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 correlations_3 = {}
 columns_3 = abs_output_3.columns.tolist()
@@ -203,7 +199,7 @@ average_corr_k40.drop(index=average_corr_k40.index[0], axis=0, inplace=True)
 
 
 # 4 Mig Route: 0.25 correlation, r
-abs_output_8 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr0.25_Migroutes4_Nit500_Carryover1.csv', header = None)
+abs_output_8 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr0.25_Migroutes4_Nit1000_Carryover1.csv', header = None)
 abs_output_8 = abs_output_8.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 correlations_8 = {}
 columns_8 = abs_output_8.columns.tolist()
@@ -217,7 +213,7 @@ average_corr_r4025.drop(index=average_corr_r4025.index[0], axis=0, inplace=True)
 
 
 # 4 Mig Route: 0.25 correlation, K
-abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0.25_Migroutes4_Nit500_Carryover1.csv', header = None)
+abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0.25_Migroutes4_Nit1000_Carryover1.csv', header = None)
 abs_output_3 = abs_output_3.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 correlations_3 = {}
 columns_3 = abs_output_3.columns.tolist()
@@ -230,7 +226,7 @@ average_corr_k4025 = result_3.groupby('distances')['PCC'].mean()
 average_corr_k4025.drop(index=average_corr_k4025.index[0], axis=0, inplace=True)
 
 # 4 Mig Route: 0.5 correlation, r
-abs_output_8 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr0.5_Migroutes4_Nit500_Carryover1.csv', header = None)
+abs_output_8 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr0.5_Migroutes4_Nit1000_Carryover1.csv', header = None)
 abs_output_8 = abs_output_8.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 correlations_8 = {}
 columns_8 = abs_output_8.columns.tolist()
@@ -244,7 +240,7 @@ average_corr_r4050.drop(index=average_corr_r4025.index[0], axis=0, inplace=True)
 
 
 # 4 Mig Route: 0.5 correlation, K
-abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0.5_Migroutes4_Nit500_Carryover1.csv', header = None)
+abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0.5_Migroutes4_Nit1000_Carryover1.csv', header = None)
 abs_output_3 = abs_output_3.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 correlations_3 = {}
 columns_3 = abs_output_3.columns.tolist()
@@ -258,7 +254,7 @@ average_corr_k4050.drop(index=average_corr_k4025.index[0], axis=0, inplace=True)
 
 
 # 4 Mig Route: 0.75 correlation, r
-abs_output_9 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr0.75_Migroutes4_Nit500_Carryover1.csv', header = None)
+abs_output_9 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr0.75_Migroutes4_Nit1000_Carryover1.csv', header = None)
 abs_output_9 = abs_output_9.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 correlations_9 = {}
 columns_9 = abs_output_9.columns.tolist()
@@ -272,7 +268,7 @@ average_corr_r4075.drop(index=average_corr_r4075.index[0], axis=0, inplace=True)
 
 
 # 4 Mig Route: 0.75 correlation, K
-abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0.75_Migroutes4_Nit500_Carryover1.csv', header = None)
+abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0.75_Migroutes4_Nit1000_Carryover1.csv', header = None)
 abs_output_3 = abs_output_3.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 correlations_3 = {}
 columns_3 = abs_output_3.columns.tolist()
@@ -286,7 +282,7 @@ average_corr_k4075.drop(index=average_corr_k4075.index[0], axis=0, inplace=True)
 
 
 # 4 Mig Route: 1 correlation, r
-abs_output_7 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr1_Migroutes4_Nit500_Carryover1.csv', header = None)
+abs_output_7 = pd.read_csv('CorrWithin0.75/Output_S0.5_F2.0_Corr1_Migroutes4_Nit1000_Carryover1.csv', header = None)
 abs_output_7 = abs_output_7.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 correlations_7 = {}
 columns_7 = abs_output_7.columns.tolist()
@@ -299,7 +295,7 @@ average_corr_r41 = result_7.groupby('distances')['PCC'].mean()
 average_corr_r41.drop(index=average_corr_r41.index[0], axis=0, inplace=True)
 
 # 4 Mig Route: 1 correlation, K
-abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr1_Migroutes4_Nit500_Carryover1.csv', header = None)
+abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr1_Migroutes4_Nit1000_Carryover1.csv', header = None)
 abs_output_3 = abs_output_3.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 correlations_3 = {}
 columns_3 = abs_output_3.columns.tolist()
@@ -312,7 +308,7 @@ average_corr_k41 = result_3.groupby('distances')['PCC'].mean()
 average_corr_k41.drop(index=average_corr_k41.index[0], axis=0, inplace=True)
 
 ## No Migration K selected Species
-abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0_Migroutes0_Nit500_Carryover0.csv', header = None)
+abs_output_3 = pd.read_csv('CorrWithin0.75/Output_S0.9_F0.25_Corr0_Migroutes0_Nit1000_Carryover0.csv', header = None)
 abs_output_3 = abs_output_3.astype(str).replace({"\[":"", "\]":""}, regex=True).astype(float)
 correlations_3 = {}
 columns_3 = abs_output_3.columns.tolist()
