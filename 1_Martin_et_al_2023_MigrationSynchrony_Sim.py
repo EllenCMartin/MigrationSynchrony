@@ -6,15 +6,9 @@ Updated October 26, 2022.
 
 @author: Aline Lee / Ellen Martin
 """
-## Set working directory:
+
+
 import os
-if os.environ['HOMEPATH'] == "\\Users\\ellencm":
-  os.chdir('//home.ansatt.ntnu.no/ellencm/Desktop/Dissertation/PAPER_I_ MIGRATION/Code_Saving')
-
-if os.environ['HOMEPATH'] == "\\Users\\lee":
-  os.chdir('//home.ansatt.ntnu.no/lee/Documents/Aline_work/Students/Ellen/Migration_paper/May22')
-
-
 from math import exp, pi, sqrt, log
 import numpy as np
 from scipy import integrate
@@ -23,7 +17,6 @@ from scipy.stats import norm
 from itertools import combinations, chain
 import pickle
 rng = np.random.default_rng()
-
 
 
 # Function for calculating distances from each point to each of the other (thinned) points
@@ -332,5 +325,5 @@ distances(150, 2, 8, 50) ##(gridsize, thin, zonewidth, midsection), creates dist
 
 abundances = np.repeat(20, 75**2) ##(abundance, number of populations)
 
-breed_nonbreed_update(nit=500, abundances=abundances, xi_list=xi_list, distlist=distlist, gridsize=150, thin=2, midsection=50, le=9, sigma=0.10, disprate=0.02, lg=5, breedsurv=1, nonbreedsurv=0.5, survenv=1, fec=2.0, fecenv=1, sdd=0.03, randommigroutes=0, correlation_between=0, correlation_within=0.75, weight=1, numbermigroutes=0, zonewidth=8, vsplit=25, hsplit=25, carryover=1)
+breed_nonbreed_update(nit=1000, abundances=abundances, xi_list=xi_list, distlist=distlist, gridsize=150, thin=2, midsection=50, le=9, sigma=0.10, disprate=0.02, lg=5, breedsurv=1, nonbreedsurv=0.5, survenv=1, fec=2.0, fecenv=1, sdd=0.03, randommigroutes=0, correlation_between=0, correlation_within=0.75, weight=1, numbermigroutes=0, zonewidth=8, vsplit=25, hsplit=25, carryover=1)
 
